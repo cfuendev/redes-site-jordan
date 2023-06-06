@@ -19,84 +19,88 @@ import Testimonials from "@components/content/Testimonials.astro";
 <Layout title="Home">
   <HeroMain />
 
-  <SectionMuted>
+  <SectionMuted id="skills" spy={1}>
     <Container>
       <SectionTitle
-        title="Forget about the hassle"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-        minititle="On-Demand Healthcare"
+        title="Habilidades"
+        subtitle="Poseo amplios conocimientos en diversos lenguajes de programación y habilidades para trabajar en entornos de alta presión. Con experiencia en mantener e integrar funciones en sistemas de información, incluso en ambientes de integración y entrega continua."
       />
 
-      <div class="grid md:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-12" x-intersect="activeStep = ''">
+      <div
+        class="grid md:grid-cols-3 ltablet:grid-cols-4 lg:grid-cols-4 gap-x-6 gap-y-12"
+      >
         <!-- Item -->
         <div>
           <IconBlock
-            title="Save time & effort"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:timer-duotone"
+            title="Python"
+            text="Conocimientos sólidos de Python enfocados tanto al análisis de datos como al desarrollo de aplicaciones web."
+            icon="teenyicons:python-outline"
             class="'text-primary-600'"
           />
         </div>
         <!-- Item -->
         <div>
           <IconBlock
-            title="Curated professionals"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:first-aid-duotone"
+            title="Java"
+            text="Amplios conocimientos de Java, tanto en el desarrollo de aplicaciones estándar JSE, como en aplicaciones de grado empresarial JEE."
+            icon="nonicons:java-16"
             class="'text-rose-500'"
           />
         </div>
         <!-- Item -->
         <div>
           <IconBlock
-            title="24/24 Emergencies"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:first-aid-kit-duotone"
+            title="SQL"
+            text="Amplio dominio del lenguaje de consultas SQL y sus variantes en diversos motores relacionales como PostgreSQL, MySQL, etc."
+            icon="ph:database-duotone"
             class="'text-primary-600'"
           />
         </div>
         <!-- Item -->
         <div>
           <IconBlock
-            title="Connected services"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:heartbeat-duotone"
+            title="Motores de BDD Relacionales"
+            text="Conocimientos en el desarrollo de aplicaciones y herramientas internas con Motores de Bases de Datos Relacionales como PostgreSQL y MySQL, así como su administración y mantenimiento."
+            icon={JSON.stringify([
+              "simple-icons:postgresql",
+              "devicon-plain:mysql",
+            ])}
             class="'text-rose-500'"
           />
         </div>
         <!-- Item -->
         <div>
           <IconBlock
-            title="Video consultations"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:video-camera-duotone"
+            title="Responsable y Autoexigente"
+            text="Siempre me comprometo a cumplir mis responsabilidades de manera puntual. Además, constantemente me impulso a superar mis propios estándares, garantizando la mayor calidad posible."
+            icon="fa:handshake-o"
+            class="'text-primary-600 w-8'"
+          />
+        </div>
+        <!-- Item -->
+        <div>
+          <IconBlock
+            title="Cooperación eficaz"
+            text="Facilidad para adaptarse a cualquier grupo de trabajo y eficiente en entornos que requieren de comunicación y esfuerzo grupal."
+            icon="clarity:group-line"
+            class="'text-primary-600 w-12'"
+          />
+        </div>
+        <!-- Item -->
+        <div>
+          <IconBlock
+            title="Persistente"
+            text="Sin importar los desafíos que se interpongan en el camino, abordo las adversidades con una actitud perseverante. Adopto diferentes enfoques y perspectivas cada vez que me encuentro con errores o dificultades."
+            icon="mdi:weight-lifter"
             class="'text-primary-600'"
           />
         </div>
         <!-- Item -->
         <div>
           <IconBlock
-            title="Audio consultations"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:phone-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-        <!-- Item -->
-        <div>
-          <IconBlock
-            title="Appointements"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:calendar-duotone"
-            class="'text-primary-600'"
-          />
-        </div>
-        <!-- Item -->
-        <div>
-          <IconBlock
-            title="Medicine"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-            icon="ph:pill-duotone"
+            title="Aprendizaje eficiente"
+            text="Me resulta sencillo familiarizarme con lenguajes de programación, librerías, frameworks y otras herramientas gracias a mis sólidos fundamentos en programación y mi experiencia como desarrollador en múltiples lenguaje."
+            icon="icon-park-solid:brain"
             class="'text-primary-600'"
           />
         </div>
@@ -104,75 +108,22 @@ import Testimonials from "@components/content/Testimonials.astro";
     </Container>
   </SectionMuted>
 
-  <SectionMuted class="'border-b border-muted-200 dark:border-muted-800'">
-    <Container>
-      <SectionTitle
-        title="Our great doctors"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-        minititle="Healthcare Professionals"
-        class="'mx-auto text-center'"
-      />
-
-      <div id="doctors" x-data="doctors()"  x-intersect="activeStep = 'spy-1'">
-        <Toolbar />
-
-        <!--Grid wrapper-->
-        <div class="py-10">
-          <div class="grid grid-cols-12 md:gap-12 pb-20">
-            <!--Filters-->
-            <div class="hidden lg:block col-span-12 lg:col-span-3">
-              <Filters />
-            </div>
-            <!--Content-->
-            <div class="col-span-12 lg:col-span-9">
-              <!--Subgrid-->
-              <Grid />
-            </div>
-          </div>
-          <div class="flex items-center justify-center mt-10">
-            <ButtonMain to="#" class="'w-64 !h-14 max-w-full'">View All Doctors</ButtonMain>
-          </div>
-        </div>
-      </div>
-    </Container>
-  </SectionMuted>
-
-  <SectionMuted class="'overflow-hidden'">
+  <SectionMuted id="references" spy={2} class="'overflow-hidden'">
     <Container>
       <div class="py-10">
-        <SideStatsRight />
         <SideStatsLeft />
       </div>
     </Container>
   </SectionMuted>
 
-  <SectionMuted>
+  <SectionMuted id="contact" spy={3}>
     <Container>
       <SectionTitle
-        title="Pricing Options"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-        minititle="Simple Pricing"
+        title="Contacto"
+        subtitle="Si quieres hablar o hacerme una oferta, podemos comunicarnos mediante estos medios."
         class="'mx-auto text-center'"
       />
       <Pricing />
-    </Container>
-  </SectionMuted>
-
-  <SectionMuted>
-    <Container>
-      <SectionTitle
-        title="They love Dokto"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc incredibile, quod beatissimum."
-        minititle="Our Patients"
-        class="'mx-auto text-center'"
-      />
-      <Testimonials />
-    </Container>
-  </SectionMuted>
-
-  <SectionMuted>
-    <Container>
-      <Cta />
     </Container>
   </SectionMuted>
 </Layout>

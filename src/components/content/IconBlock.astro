@@ -1,9 +1,20 @@
 ---
 const { class: className, icon, title, text } = Astro.props;
+let iconIsMultiple = false;
+try {
+  JSON.parse(icon);
+  iconIsMultiple = true;
+} catch (Error) { }
 ---
 
 <div class="font-sans">
-  <i class="iconify w-7 h-7 mb-2" :class={className} data-icon={icon}></i>
+  <div class="flex flex-row gap-x-1.5">
+  { 
+    iconIsMultiple ? JSON.parse(icon).map((i)=>
+      <i class="iconify w-7 h-7 mb-2" :class={className} data-icon={i}></i>
+    ) : () => <i class="iconify w-7 h-7 mb-2" :class={className} data-icon={icon}></i>
+  }
+  </div>
   <h4 class="font-light text-lg mb-2 text-muted-800 dark:text-muted-100">{title}</h4>
   <p class="text-sm text-muted-500 dark:text-muted-400">{text}</p>
 </div>

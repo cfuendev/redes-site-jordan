@@ -1,9 +1,11 @@
 ---
-const { class: className } = Astro.props;
+const { id, class: className, spy } = Astro.props;
 ---
 
 <section
-  class="w-full py-16 px-4 bg-muted-100 dark:bg-muted-1000"
+  x-intersect={`activeStep = 'spy-${spy}'`}
+  id={id}
+  class="w-full pb-16 pt-4 mt-12 px-4 bg-muted-100 dark:bg-muted-1000"
   :class={className}
 >
   <slot />

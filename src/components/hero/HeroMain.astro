@@ -5,6 +5,8 @@ import HeroMainModuleOne from "@components/hero/HeroMainModuleOne.astro";
 ---
 
 <div
+  id="Hero"
+  x-intersect="activeStep = 0"
   class="min-h-screen w-full overflow-hidden bg-muted-100 dark:bg-muted-1000"
 >
   <div class="min-h-screen w-full max-w-7xl mx-auto flex items-center px-4">
@@ -19,58 +21,33 @@ import HeroMainModuleOne from "@components/hero/HeroMainModuleOne.astro";
             <h1
               class="font-medium text-4xl ptablet:text-5xl lg:text-5xl text-muted-800 dark:text-white"
             >
-              We help you find the Doctor you need
+              Jordan Soto
             </h1>
             <p class="text-lg text-muted-500 dark:text-muted-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tibi hoc
-              incredibile, quod beatissimum. Quamquam te quidem video minime
-              esse deterritum.
+              ¡Hola! Soy un estudiante de Ingeniería de Sistemas de 7&#186 Semestre. Soy responsable y autoexigente.  Mi experiencia como analista de datos me ha permitido desarrollar habilidades en Python, Java y SQL
             </p>
             <div
               class="w-full flex items-center justify-center ltablet:justify-start lg:justify-start gap-2"
             >
-              <ButtonMain to={"/home"} class="'min-w-[130px]'"
-                >Get Started</ButtonMain
-              >
-              <ButtonSub to={"/home"} class="'min-w-[130px]'">Explore</ButtonSub
+              <ButtonMain to={"#skills"} class="'min-w-[130px]'"
+                >Conóceme</ButtonMain
               >
             </div>
           </div>
         </div>
       </div>
       <div class="relative col-span-12 ltablet:col-span-7 lg:col-span-7">
+        <!-- HERO IMAGE -->
         <img
-          src="/img/illustrations/hero.svg"
-          class="block dark:hidden w-full ltablet:max-w-[540px] max-w-[620px] mx-auto"
+          src="https://i.imgur.com/f83k9YC.png"
+          class="block dark:hidden w-full ltablet:max-w-[400px] max-w-[400px] rounded-lg mx-auto"
           alt="Hero image"
         />
         <img
-          src="/img/illustrations/hero-dark.svg"
-          class="hidden dark:block w-full ltablet:max-w-[540px] max-w-[620px] mx-auto"
+          src="https://i.imgur.com/f83k9YC.png"
+          class="hidden dark:block w-full ltablet:max-w-[400px] max-w-[400px] rounded-lg mx-auto"
           alt="Hero image"
         />
-        <!-- Decoration -->
-        <div
-          class="absolute top-6 left-0 h-14 w-14 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-        >
-          💊
-        </div>
-        <div
-          class="absolute top-24 left-24 h-10 w-10 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-        >
-          ⚕️
-        </div>
-        <div
-          class="absolute -bottom-10 right-0 h-16 w-16 hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-        >
-          💉
-        </div>
-        <div
-          class="absolute -top-12 left-1/3 h-16 w-16 hidden ptablet:hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-        >
-          🦠
-        </div>
-        <HeroMainModuleOne />
       </div>
     </div>
   </div>
